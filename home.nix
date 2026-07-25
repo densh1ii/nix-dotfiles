@@ -11,13 +11,13 @@
       ls = "eza --icons=always -1";
       cd= "z";
       bt = "bluetui";
-      ff = "fastfetch -c ~/dotfiles/config/fastfetch/config.jsonc";
+      ff = "fastfetch -c ~/nix-dotfiles/config/fastfetch/config.jsonc";
       fff="fastfetch";
       sp = "spotify_player";
       nrsf = "sudo nixos-rebuild switch --flake ~/nix-dotfiles#nixos";
-      cnix = "nvim ~/dots/configuration.nix";
-      chome = "nvim ~/dots/home.nix";
-      cflake = "nvim ~/dots/flake.nix";
+      cnix = "nvim ~/nix-dotfiles/configuration.nix";
+      chome = "nvim ~/nix-dotfiles/home.nix";
+      cflake = "nvim ~/nix-dotfiles/flake.nix";
     };
     interactiveShellInit = ''
       set -g fish_greeting
@@ -30,7 +30,7 @@
   };
 
   xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/denshi/dotfiles/config/nvim/";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/denshi/nix-dotfiles/config/nvim/";
     recursive = true;
   };
 
