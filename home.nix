@@ -14,7 +14,7 @@
       ff = "fastfetch -c ~/dotfiles/config/fastfetch/config.jsonc";
       fff="fastfetch";
       sp = "spotify_player";
-      nrsf = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
+      nrsf = "sudo nixos-rebuild switch --flake ~/nix-dotfiles#nixos";
       cnix = "nvim ~/dots/configuration.nix";
       chome = "nvim ~/dots/home.nix";
       cflake = "nvim ~/dots/flake.nix";
