@@ -1,3 +1,3 @@
-require('configurations.options')
-require('configurations.keybinds')
-require('configurations.lazy')
+require('configuration.options')
+require('configuration.keybinds')
+require('configuration.lazy')

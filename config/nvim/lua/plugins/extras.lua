@@ -1,20 +1,16 @@
-return{
+return {
     {
-        'tpope/vim-fugitive',
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
     },
+    { 'vyfor/cord.nvim' },
     {
         'brenoprata10/nvim-highlight-colors',
         config = function()
             require('nvim-highlight-colors').setup({})
         end
     },
-    {
-        'vyfor/cord.nvim',
-    },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    },
+    { 'ojroques/vim-oscyank' },
+    { 'tpope/vim-fugitive' },
 }
-

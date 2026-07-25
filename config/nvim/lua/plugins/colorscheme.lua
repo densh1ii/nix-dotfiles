@@ -1,11 +1,12 @@
 return{
     {
-        "ellisonleao/gruvbox.nvim",
-         priority = 1000,
-         config = function()
-             require('gruvbox').setup({})
-             vim.cmd("colorscheme gruvbox")
-         end
+        "ellisonleao/gruvbox.nvim", 
+        priority = 1000 ,
+        config = function()
+            require("gruvbox").setup({})
+            vim.o.background = "dark" -- or "light" for light mode
+            vim.cmd([[colorscheme gruvbox]])
+        end
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -13,9 +14,10 @@ return{
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'gruvbox'
-                }
+                    theme = 'gruvbox',
+                },
             })
+
         end
     }
 }
