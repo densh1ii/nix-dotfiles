@@ -48,6 +48,7 @@
   xdg.configFile."polybar/config.ini".source = ./config/polybar/config.ini;
   xdg.configFile."alacritty.toml".source = ./config/alacritty/alacritty.toml;
   xdg.configFile."picom.conf".source = ./config/picom/picom.conf;
+  xdg.configFile."rofi/config.rasi".source = ./config/rofi/config.rasi;
 
   home.packages = with pkgs; [
     fastfetch
@@ -75,6 +76,7 @@
       i3Support = true;
       pulseSupport = true;
     })
+    vulkan-tools
   ];
 
 }

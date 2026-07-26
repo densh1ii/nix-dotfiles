@@ -1,11 +1,11 @@
 return{
     {
-        "ellisonleao/gruvbox.nvim", 
-        priority = 1000 ,
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            require("gruvbox").setup({})
-            vim.o.background = "dark" -- or "light" for light mode
-            vim.cmd([[colorscheme gruvbox]])
+            require('tokyonight').setup({style = "moon"})
+            vim.cmd[[colorscheme tokyonight-night]]
         end
     },
     {
@@ -14,7 +14,7 @@ return{
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'gruvbox',
+                    theme = 'tokyonight',
                 },
             })
 

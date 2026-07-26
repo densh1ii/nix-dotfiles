@@ -21,7 +21,18 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+      vulkan-validation-layers
+      nvidia-vaapi-driver
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      vulkan-loader
+    ];
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -73,6 +84,7 @@
    };
 
    services.flatpak.enable = true;
+   services.solaar.enable = true;
    programs.steam.enable = true;
    environment.systemPackages = with pkgs; [
      neovim
@@ -86,7 +98,6 @@
    ];  
   
    nix.settings.experimental-features = ["nix-command" "flakes"];
-
 
   system.stateVersion = "26.05"; 
 

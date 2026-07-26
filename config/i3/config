@@ -19,16 +19,12 @@ font pango:monospace 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xrandr --output HDMI-0 --rate 200 --mode 1920x1080
 exec --no-startup-id picom 
 exec --no-startup-id ~/.fehbg
-exec_always --no-startup-id ~/dotfiles/config/polybar/launch.sh
+exec_always --no-startup-id  xinput --set-prop 15 "libinput Accel Profile Enabled" 0, 1
+exec_always --no-startup-id /home/denshi/nix-dotfiles/config/polybar/launch.sh
 exec_always --no-startup-id /usr/local/bin/i3flow
 
 for_window [class="^.*"] border pixel 0
