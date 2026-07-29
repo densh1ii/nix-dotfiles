@@ -56,7 +56,7 @@
       autoRepeatInterval = 35;
       windowManager.i3 = {
         enable = true;
-	extraPackages = [];
+        extraPackages = [];
       };
   };
   services.displayManager.ly.enable = true;
@@ -90,7 +90,7 @@
      neovim
      wget
      git
-     alacritty
+     easyeffects
    ];
 
    fonts.packages = with pkgs; [

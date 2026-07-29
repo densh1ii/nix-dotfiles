@@ -14,5 +14,4 @@ configuration {
     sidebar-mode: false;
 }
 
-@theme "/home/denshi/nix-dotfiles/config/rofi/monochrome.rasi"
-
+@theme "/home/denshi/.config/rofi/monochrome.rasi"

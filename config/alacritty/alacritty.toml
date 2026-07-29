@@ -1,6 +1,8 @@
 
 [window]
 opacity = 0.93
+padding = {x = 14, y = 14}
+decorations = "full"
 
 [font]
 size = 12.0
@@ -17,58 +19,55 @@ style = "Bold"
 family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
-[colors.bright]
-black = "#444b6a"
-blue = "#7da6ff"
-cyan = "#0db9d7"
-green = "#b9f27c"
-magenta = "#bb9af7"
-red = "#ff7a93"
-white = "#acb0d0"
-yellow = "#ff9e64"
-
-[colors.normal]
-black = "#32344a"
-blue = "#7aa2f7"
-cyan = "#449dab"
-green = "#9ece6a"
-magenta = "#ad8ee6"
-red = "#f7768e"
-white = "#787c99"
-yellow = "#e0af68"
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 600
 
 [colors.primary]
-background = "#1a1b26"
-foreground = "#a9b1d6"
+background         = '#0d0d0d'
+foreground          = '#e0e0e0'
+dim_foreground      = '#a0a0a0'
+bright_foreground   = '#ffffff'
+ 
+[colors.cursor]
+text   = '#0d0d0d'
+cursor = '#e0e0e0'
+ 
+[colors.vi_mode_cursor]
+text   = '#0d0d0d'
+cursor = '#808080'
+ 
+[colors.selection]
+text       = '#0d0d0d'
+background = '#a0a0a0'
+ 
+[colors.normal]
+black   = '#0d0d0d'
+red     = '#5c5c5c'
+green   = '#6e6e6e'
+yellow  = '#808080'
+blue    = '#929292'
+magenta = '#a4a4a4'
+cyan    = '#b6b6b6'
+white   = '#c8c8c8'
+ 
+[colors.bright]
+black   = '#4d4d4d'
+red     = '#707070'
+green   = '#828282'
+yellow  = '#949494'
+blue    = '#a6a6a6'
+magenta = '#b8b8b8'
+cyan    = '#cacaca'
+white   = '#ffffff'
+ 
+[colors.dim]
+black   = '#000000'
+red     = '#454545'
+green   = '#535353'
+yellow  = '#616161'
+blue    = '#6f6f6f'
+magenta = '#7d7d7d'
+cyan    = '#8b8b8b'
+white   = '#999999'
 
-#[colors.primary]
-#foreground = "#ebdbb2"
-#background = "#282828"
-
-#[colors.cursor]
-#text = "#282828"
-#cursor = "#ebdbb2"
-
-#[colors.selection]
-#text = "#282828"
-#background = "#ebdbb2"
-
-#[colors.normal]
-#black = "#282828"
-#red = "#cc241d"
-#green = "#98971a"
-#yellow = "#d79921"
-#blue = "#458588"
-#magenta = "#b16286"
-#cyan = "#689d6a"
-#white = "#a89984"
-#
-#[colors.bright]
-#black = "#928374"
-#red = "#fb4934"
-#green = "#b8bb26"
-#yellow = "#fabd2f"
-#blue = "#83a598"
-#magenta = "#d3869b"
-#cyan = "#8ec07c"
-#white = "#ebdbb2"

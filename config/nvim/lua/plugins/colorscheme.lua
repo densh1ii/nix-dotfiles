@@ -1,12 +1,15 @@
 return{
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
+        'aliqyan-21/darkvoid.nvim',
         config = function()
-            require('tokyonight').setup({style = "moon"})
-            vim.cmd[[colorscheme tokyonight-night]]
+            require('darkvoid').setup({
+                glow = true,
+                transparent = true,
+            })
+            vim.cmd("colorscheme darkvoid")
+            --vim.api.nvim_set_hl(0,"Normal",{bg = "none"})
         end
+
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -14,7 +17,7 @@ return{
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'tokyonight',
+                    theme = 'auto',
                 },
             })
 

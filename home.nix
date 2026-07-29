@@ -53,9 +53,11 @@
   home.packages = with pkgs; [
     fastfetch
     vesktop
+    discord
     pavucontrol
     bluetui
     spotify-player
+    spotify
     fzf
     mpv
     eza
@@ -77,6 +79,11 @@
       pulseSupport = true;
     })
     vulkan-tools
+    alacritty
+    dunst
+    yazi
+    playerctl
+    vinegar
   ];
 
 }
