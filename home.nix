@@ -84,6 +84,7 @@
     yazi
     playerctl
     vinegar
+    lunar-client
   ];
 
 }
