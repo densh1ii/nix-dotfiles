@@ -10,11 +10,18 @@
         solaar = {
           url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; 
         };
+        curd = {
+          url = "github:wraient/curd";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, home-manager, solaar, ...}: {
+    outputs = { self, nixpkgs, home-manager, solaar, curd, ...}: {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
+           specialArgs = {
+             inherit curd;
+           };
            modules = [
                ./configuration.nix
                home-manager.nixosModules.home-manager

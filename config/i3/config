@@ -25,6 +25,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+bindsym $mod+l exec --no-startup-id betterlockscreen -l
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down

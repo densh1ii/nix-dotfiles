@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, curd, ... }:
 
 {
   imports =
@@ -91,6 +91,7 @@
      wget
      git
      easyeffects
+     curd.packages.${pkgs.system}.default
    ];
 
    fonts.packages = with pkgs; [

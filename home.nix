@@ -13,7 +13,6 @@
       bt = "bluetui";
       ff = "fastfetch -c ~/nix-dotfiles/config/fastfetch/config.jsonc";
       fff="fastfetch";
-      sp = "spotify_player";
       nrsf = "sudo nixos-rebuild switch --flake ~/nix-dotfiles#nixos";
       cnix = "nvim ~/nix-dotfiles/configuration.nix";
       chome = "nvim ~/nix-dotfiles/home.nix";
@@ -56,7 +55,6 @@
     discord
     pavucontrol
     bluetui
-    spotify-player
     spotify
     fzf
     mpv
@@ -85,6 +83,7 @@
     playerctl
     vinegar
     lunar-client
+    betterlockscreen
   ];
 
 }
