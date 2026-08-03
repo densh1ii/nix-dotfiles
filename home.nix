@@ -65,6 +65,7 @@
     feh
     flameshot
     xclip
+    copyq
     unzip
     zip
     unrar
