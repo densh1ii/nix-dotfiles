@@ -21,6 +21,7 @@ return {
                     "clangd",
                     "lua_ls",
                 },
+                automatic_enable = true,
             })
         end,
     },

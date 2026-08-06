@@ -14,9 +14,10 @@
           url = "github:wraient/curd";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+        spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     };
 
-    outputs = { self, nixpkgs, home-manager, solaar, curd, ...}: {
+    outputs = inputs@{ self, nixpkgs, home-manager, solaar, curd, ...}: {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
            specialArgs = {
@@ -25,15 +26,19 @@
            modules = [
                ./configuration.nix
                home-manager.nixosModules.home-manager
-               solaar.nixosModules.default
                {
                    home-manager = {
                        useGlobalPkgs = true;
                        useUserPackages = true;
                        users.denshi = import ./home.nix;
                        backupFileExtension = "backup";
+                       extraSpecialArgs = {
+                         inherit inputs;
+                       };
                    }; 
                }
+               solaar.nixosModules.default
+
            ];
         };
     };

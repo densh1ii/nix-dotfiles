@@ -1,0 +1,18 @@
+/**
+ * Main rofi config — save as ~/.config/rofi/config.rasi
+ * Assumes monochrome.rasi lives alongside it in ~/.config/rofi/
+ */
+
+configuration {
+    modi: "drun,run,window";
+    show-icons: false;
+    display-drun: "apps";
+    display-run: "run";
+    display-window: "window";
+    drun-display-format: "{name}";
+    disable-history: false;
+    sidebar-mode: false;
+}
+
+@theme "/home/denshi/nix-dotfiles/config/rofi/monochrome.rasi"
+

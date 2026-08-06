@@ -50,17 +50,24 @@
     powerOnBoot = true;
   };
 
-  services.xserver = {
-      enable = true;
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 35;
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = [];
-      };
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
   };
   services.displayManager.ly.enable = true;
-  
+
+  #services.desktopManager.plasma6.enable = true;
+  #environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  #  kdeplasma-addons
+  #  krdc
+  #  krfb
+  #  khelpcenter
+  #  kate
+  #  elisa
+  #];
+  #services.displayManager.plasma-login-manager.enable = true;
+
    services.pipewire = {
      enable = true;
      pulse.enable = true;
@@ -80,6 +87,7 @@
      enable = true;
      extraPortals = with pkgs; [
        xdg-desktop-portal-gtk
+       xdg-desktop-portal-hyprland
      ];
    };
 
@@ -91,7 +99,7 @@
      wget
      git
      easyeffects
-     curd.packages.${pkgs.system}.default
+     curd.packages.${pkgs.stdenv.hostPlatform.system}.default
    ];
 
    fonts.packages = with pkgs; [

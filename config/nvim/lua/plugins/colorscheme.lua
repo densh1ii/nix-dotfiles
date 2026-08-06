@@ -1,12 +1,13 @@
 return{
     {
-        'aliqyan-21/darkvoid.nvim',
+        "catppuccin/nvim", 
+        name = "catppuccin", 
+        priority = 1000,
         config = function()
-            require('darkvoid').setup({
-                glow = true,
-                transparent = true,
+            require("catppuccin").setup({
+                flavour = "mocha",
             })
-            vim.cmd("colorscheme darkvoid")
+            vim.cmd("colorscheme catppuccin-nvim")
             --vim.api.nvim_set_hl(0,"Normal",{bg = "none"})
         end
 

@@ -1,9 +1,25 @@
-{ config, pkgs, ...}:
+{ config, pkgs, inputs, ...}:
 
 {
+   
+   imports = [
+      inputs.spicetify-nix.homeManagerModules.default
+     ./modules/Spicetify.nix
+   ];
+
    home.username = "denshi";
    home.homeDirectory = "/home/denshi";
    home.stateVersion = "26.05";
+
+   home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Gruvbox";
+    size = 24;
+  };
+
    programs.fish = {
     enable = true;
     shellAliases = {
@@ -33,58 +49,37 @@
     recursive = true;
   };
 
-  xsession.windowManager.i3 = {
-    enable = true;
-  };
-
-  home.file.".config/i3" = {
-    source = ./config/i3;
-    onChange = ''
-        ${pkgs.i3}/bin/i3-msg reload
-      '';
-    };
-
-  xdg.configFile."polybar/config.ini".source = ./config/polybar/config.ini;
-  xdg.configFile."alacritty.toml".source = ./config/alacritty/alacritty.toml;
-  xdg.configFile."picom.conf".source = ./config/picom/picom.conf;
   xdg.configFile."rofi/config.rasi".source = ./config/rofi/config.rasi;
+  xdg.configFile."hypr/hyprland.lua".source = ./config/hypr/hyprland.lua;
+  xdg.configFile."kitty/kitty.conf".source = ./config/kitty/kitty.conf ;
 
   home.packages = with pkgs; [
     fastfetch
     vesktop
-    discord
-    pavucontrol
-    bluetui
-    spotify
     fzf
     mpv
     eza
     prismlauncher
     firefox
-    picom 
-    feh
-    flameshot
-    xclip
-    copyq
     unzip
     zip
     unrar
     tree-sitter
     gcc
     gnumake
-    rofi
-    (polybar.override {
-      i3Support = true;
-      pulseSupport = true;
-    })
     vulkan-tools
-    alacritty
-    dunst
-    yazi
     playerctl
     vinegar
     lunar-client
-    betterlockscreen
+    bluetui
+    hyprlock
+    hypridle
+    rofi
+    hyprshot
+    waybar
+    kitty
+    pavucontrol
+    bibata-cursors
   ];
 
 }
